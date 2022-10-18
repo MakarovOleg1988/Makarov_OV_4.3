@@ -9,6 +9,9 @@ This .gitignore file should be placed at the root of your Unity project director
 /[Bb]uilds/
 /[Ll]ogs/
 /[Uu]ser[Ss]ettings/
+/[Mm]aterials/
+/[Pp]refabs/
+/[Ss]cenes/
 
 # MemoryCaptures can get excessive in size.
 # They also could contain extremely sensitive data
