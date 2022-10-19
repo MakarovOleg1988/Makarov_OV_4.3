@@ -4,17 +4,8 @@ using UnityEngine;
 
 namespace Makarov_OV_4_3
 {
-    public class CreateDeskScript : MonoBehaviour
+    public class CreateDeskScript : CellComponent
     {
-
-        [SerializeField] private GameObject _blockBlack;
-        [SerializeField] private GameObject _blockWhite;
-
-        [SerializeField] private int _widht;
-        [SerializeField] private int _height;
-
-        private float _sizerowX = 1f;
-        private float _sizerowZ = 1f;
 
         void Start()
         {
@@ -46,7 +37,7 @@ namespace Makarov_OV_4_3
         void SetParentWhite(GameObject _tempGo, int x, int z)
         {
             _tempGo.transform.parent = transform;
-            _tempGo.name = x.ToString() + "," + z.ToString();
+            _tempGo.name = "Cell " + x.ToString() + "," + z.ToString();
         }
 
         private void CreateMapBlockBlack()
@@ -73,7 +64,7 @@ namespace Makarov_OV_4_3
         void SetParentBlack(GameObject _tempGo, int x, int z)
         {
             _tempGo.transform.parent = transform;
-            _tempGo.name = x.ToString() + "," + z.ToString();
+            _tempGo.name = "Cell " + x.ToString() + "," + z.ToString();
         }
     }
 }

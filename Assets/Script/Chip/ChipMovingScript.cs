@@ -6,30 +6,37 @@ namespace Makarov_OV_4_3
 {
     public class ChipMovingScript : ChipComponent
     {
-        private void OnMouseEnter()
+
+        private void OnMouseDown()
         {
-            if (_color == ColorType.White && TurnScript._turnScript._sideOfPlayer == false) GetComponent<MeshRenderer>().material = _meshMaterials[2];
-            else if (_color == ColorType.Black && TurnScript._turnScript._sideOfPlayer == false) Debug.Log("Вы пытаетесь выбрал чужую фишку");
-            else if (_color == ColorType.Black && TurnScript._turnScript._sideOfPlayer == true) GetComponent<MeshRenderer>().material = _meshMaterials[2];
-            else if (_color == ColorType.White && TurnScript._turnScript._sideOfPlayer == true) Debug.Log("Вы пытаетесь выбрал чужую фишку");
+
         }
 
-        private void OnMouseExit()
+        /*private void Update()
         {
-            if (_color == ColorType.White && TurnScript._turnScript._sideOfPlayer == false) GetComponent<MeshRenderer>().material = _meshMaterials[1];
-            else if (_color == ColorType.Black && TurnScript._turnScript._sideOfPlayer == false) Debug.Log("Вы пытаетесь выбрал чужую фишку");
-            else if (_color == ColorType.Black && TurnScript._turnScript._sideOfPlayer == true) GetComponent<MeshRenderer>().material = _meshMaterials[0];
-            else if (_color == ColorType.White && TurnScript._turnScript._sideOfPlayer == true) Debug.Log("Вы пытаетесь выбрал чужую фишку");
-        }
+            if (Input.GetMouseButtonDown(0))
+            {
+                Ray _ray = Camera.main.ScreenPointToRay(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 1));
+                RaycastHit _hit;
+                while (Physics.Raycast(_ray, out _hit, Mathf.Infinity) && TurnScript._turnScript._sideOfPlayer == false && gameObject.GetComponent<ChipComponent>())
+                {
+                        _selectedChip = _hit.transform.gameObject;
+                        _selectedChip.GetComponent<MeshRenderer>().material = _meshMaterials[3];
+                    Instantiate(_selectedBlock, _selectedChip.transform.position + new Vector3(1, 0, -1), Quaternion.identity);
+                    Instantiate(_selectedBlock, _selectedChip.transform.position + new Vector3(-1, 0, -1), Quaternion.identity);
+                    Debug.Log("createnew");
+                }
+            }
+        }*/
 
-        public void OnPointerEnter()
+        IEnumerator Move()
         {
-            
-        }
-
-        public void OnPointerExit()
-        {
-            
+            GameObject _objectMove = _selectedChip;
+            while (Vector3.Distance(_selectedChip.transform.position, gameObject.transform.position) > 0.01f)
+            {
+                _objectMove.transform.position = Vector3.MoveTowards(_objectMove.transform.position, transform.position, 0.01f);
+                yield return new WaitForSeconds(0.01f);
+            }
         }
     }
 }
