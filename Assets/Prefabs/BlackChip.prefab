@@ -112,8 +112,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 723781b579443614a9dbc044bc3df72a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _selectedBlock: {fileID: 6650034578160540458, guid: 6f92df32b73987949ac9b581902d5bf4, type: 3}
-  _meshMaterials:
+  _chipWhite: {fileID: 255765202061646699, guid: 99c01ce9c6cca254998d7b27cc852361, type: 3}
+  _chipBlack: {fileID: 8241028202896394753}
+  _meshMaterialsChips:
   - {fileID: 2100000, guid: a35fa74238a87c8419c1efbf70c9890c, type: 2}
   - {fileID: 2100000, guid: 0b86da47c3867bb4081a10c003fafd9a, type: 2}
   - {fileID: 2100000, guid: 0b020764e1b68f94ba675d76f6574e73, type: 2}
@@ -131,10 +132,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53c7f821e918cb0409ecc35d17a353a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _selectedBlock: {fileID: 6650034578160540458, guid: 6f92df32b73987949ac9b581902d5bf4, type: 3}
-  _meshMaterials:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  _chipWhite: {fileID: 255765202061646699, guid: 99c01ce9c6cca254998d7b27cc852361, type: 3}
+  _chipBlack: {fileID: 8241028202896394753}
+  _meshMaterialsChips:
+  - {fileID: 2100000, guid: a35fa74238a87c8419c1efbf70c9890c, type: 2}
+  - {fileID: 2100000, guid: 0b86da47c3867bb4081a10c003fafd9a, type: 2}
+  - {fileID: 2100000, guid: 0b020764e1b68f94ba675d76f6574e73, type: 2}
   - {fileID: 2100000, guid: 605c9ce4b6246a146b3bc3f7e00e6526, type: 2}
-  _color: 0
+  _color: 1

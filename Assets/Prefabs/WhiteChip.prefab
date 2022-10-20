@@ -8,7 +8,7 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 255765202061646695}
+  - component: {fileID: 1734294242658776804}
   - component: {fileID: 255765202061646694}
   - component: {fileID: 255765202061646697}
   - component: {fileID: 255765202061646696}
@@ -21,7 +21,7 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &255765202061646695
+--- !u!4 &1734294242658776804
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -29,7 +29,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 255765202061646699}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 21.397476, y: 30.38, z: -30.717}
+  m_LocalPosition: {x: 598, y: 277, z: 0}
   m_LocalScale: {x: 0.9, y: 0.11, z: 0.9}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -112,8 +112,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 723781b579443614a9dbc044bc3df72a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _selectedBlock: {fileID: 6650034578160540458, guid: 6f92df32b73987949ac9b581902d5bf4, type: 3}
-  _meshMaterials:
+  _chipWhite: {fileID: 255765202061646699}
+  _chipBlack: {fileID: 8241028202896394753, guid: db2d614523e20394f803f3f5f818abbd, type: 3}
+  _meshMaterialsChips:
   - {fileID: 2100000, guid: a35fa74238a87c8419c1efbf70c9890c, type: 2}
   - {fileID: 2100000, guid: 0b86da47c3867bb4081a10c003fafd9a, type: 2}
   - {fileID: 2100000, guid: 0b020764e1b68f94ba675d76f6574e73, type: 2}
@@ -131,8 +132,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53c7f821e918cb0409ecc35d17a353a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _selectedBlock: {fileID: 6650034578160540458, guid: 6f92df32b73987949ac9b581902d5bf4, type: 3}
-  _meshMaterials:
+  _chipWhite: {fileID: 255765202061646699}
+  _chipBlack: {fileID: 8241028202896394753, guid: db2d614523e20394f803f3f5f818abbd, type: 3}
+  _meshMaterialsChips:
   - {fileID: 2100000, guid: a35fa74238a87c8419c1efbf70c9890c, type: 2}
   - {fileID: 2100000, guid: 0b86da47c3867bb4081a10c003fafd9a, type: 2}
   - {fileID: 2100000, guid: 0b020764e1b68f94ba675d76f6574e73, type: 2}

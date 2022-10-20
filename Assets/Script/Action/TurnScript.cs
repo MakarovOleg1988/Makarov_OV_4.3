@@ -25,7 +25,7 @@ namespace Makarov_OV_4_3
 
         private IEnumerator TurnBlack()
         {
-            _player.transform.position = new Vector3(3.5f, 5.3f, -1f);
+            _player.transform.position = new Vector3(3.4f, 8f, 4.5f);
             _player.transform.Rotate(Vector3.up, 180);
             _sideOfPlayer = true;
             yield return new WaitForSeconds(1f);
@@ -33,7 +33,7 @@ namespace Makarov_OV_4_3
 
         private IEnumerator TurnWhite()
         {
-            _player.transform.position = new Vector3(3.5f, 5.3f, 10f);
+            _player.transform.position = new Vector3(3.4f, 8f, 4.5f);
             transform.Rotate(Vector3.up, 180);
             _sideOfPlayer = false;
             yield return new WaitForSeconds(1f);

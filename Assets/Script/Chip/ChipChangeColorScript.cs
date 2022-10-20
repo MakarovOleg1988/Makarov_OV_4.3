@@ -6,20 +6,33 @@ namespace Makarov_OV_4_3
 {
     public class ChipChangeColorScript : ChipComponent
     {
-        private void OnMouseEnter()
+        public void OnMouseEnter()
         {
-            if (_color == ColorType.White && TurnScript._turnScript._sideOfPlayer == false) GetComponent<MeshRenderer>().material = _meshMaterials[2];
+            if (_color == ColorType.White && TurnScript._turnScript._sideOfPlayer == false) GetComponent<MeshRenderer>().material = _meshMaterialsChips[2];
             else if (_color == ColorType.Black && TurnScript._turnScript._sideOfPlayer == false) Debug.Log("Вы пытаетесь выбрал чужую фишку");
-            else if (_color == ColorType.Black && TurnScript._turnScript._sideOfPlayer == true) GetComponent<MeshRenderer>().material = _meshMaterials[2];
+            else if (_color == ColorType.Black && TurnScript._turnScript._sideOfPlayer == true) GetComponent<MeshRenderer>().material = _meshMaterialsChips[2];
             else if (_color == ColorType.White && TurnScript._turnScript._sideOfPlayer == true) Debug.Log("Вы пытаетесь выбрал чужую фишку");
         }
 
-        private void OnMouseExit()
+        public void OnMouseExit()
         {
-            if (_color == ColorType.White && TurnScript._turnScript._sideOfPlayer == false) GetComponent<MeshRenderer>().material = _meshMaterials[1];
+            if (_color == ColorType.White && TurnScript._turnScript._sideOfPlayer == false) GetComponent<MeshRenderer>().material = _meshMaterialsChips[1];
             else if (_color == ColorType.Black && TurnScript._turnScript._sideOfPlayer == false) Debug.Log("Вы пытаетесь выбрал чужую фишку");
-            else if (_color == ColorType.Black && TurnScript._turnScript._sideOfPlayer == true) GetComponent<MeshRenderer>().material = _meshMaterials[0];
+            else if (_color == ColorType.Black && TurnScript._turnScript._sideOfPlayer == true) GetComponent<MeshRenderer>().material = _meshMaterialsChips[0];
             else if (_color == ColorType.White && TurnScript._turnScript._sideOfPlayer == true) Debug.Log("Вы пытаетесь выбрал чужую фишку");
+        }
+
+        public void OnMouseDrag()
+        { 
+            gameObject.GetComponent<MeshRenderer>().material = _meshMaterialsChips[3];
+            string _nameObj = gameObject.name;
+            int _firstNumber = _nameObj[5];
+            int _secondNumber = _nameObj[7];
+            var _nameCellLeft = "Cell" + (_firstNumber + 1) + (_secondNumber + 1);
+            var _nameCellRight = "Cell" + (_firstNumber - 1) + (_secondNumber - 1);
+            Debug.Log(_nameCellLeft);
+            Debug.Log(_nameCellRight);
         }
     }
 }
+
