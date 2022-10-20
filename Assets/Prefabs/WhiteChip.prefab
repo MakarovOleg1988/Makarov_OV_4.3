@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 255765202061646696}
   - component: {fileID: 2639286764547305622}
   - component: {fileID: 7156700023961789167}
+  - component: {fileID: 8081497347286754876}
   m_Layer: 0
   m_Name: WhiteChip
   m_TagString: Untagged
@@ -140,3 +141,15 @@ MonoBehaviour:
   - {fileID: 2100000, guid: 0b020764e1b68f94ba675d76f6574e73, type: 2}
   - {fileID: 2100000, guid: 605c9ce4b6246a146b3bc3f7e00e6526, type: 2}
   _color: 0
+--- !u!114 &8081497347286754876
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 255765202061646699}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f38f7b8b3777ecf468a72799b7a04e36, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

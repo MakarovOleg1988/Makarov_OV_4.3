@@ -25,13 +25,10 @@ namespace Makarov_OV_4_3
         public void OnMouseDrag()
         { 
             gameObject.GetComponent<MeshRenderer>().material = _meshMaterialsChips[3];
-            string _nameObj = gameObject.name;
-            int _firstNumber = _nameObj[5];
-            int _secondNumber = _nameObj[7];
-            var _nameCellLeft = "Cell" + (_firstNumber + 1) + (_secondNumber + 1);
-            var _nameCellRight = "Cell" + (_firstNumber - 1) + (_secondNumber - 1);
-            Debug.Log(_nameCellLeft);
-            Debug.Log(_nameCellRight);
+            char _firstNumber = gameObject.name[5];
+            char _secondNumber = gameObject.name[7];
+            var _nameCellLeft = "Cell" + _firstNumber + _secondNumber;
+            var _nameCellRight = "Cell" + _firstNumber + _secondNumber;
         }
     }
 }

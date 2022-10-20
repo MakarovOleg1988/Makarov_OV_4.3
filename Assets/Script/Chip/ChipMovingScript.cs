@@ -9,17 +9,32 @@ namespace Makarov_OV_4_3
     public class ChipMovingScript : ChipComponent
     {
         private Vector3 moffset;
+        public string _targetCell = "Cell";
 
         void onMouseDown()
         {
-            moffset = gameObject.transform.position - GetmouseWorldPos();
+            moffset = transform.position - GetmouseWorldPos();
+            transform.GetComponent<Collider>().enabled = false;
         }
-        
 
-        private void OnMouseDrag()
+        private void OnMouseUp()
         {
-            if (_color == ColorType.White && TurnScript._turnScript._sideOfPlayer == false) transform.position = GetmouseWorldPos() + moffset;
-            else if (_color == ColorType.Black && TurnScript._turnScript._sideOfPlayer == true) transform.position = GetmouseWorldPos() + moffset;
+            var _rayOrigin = Camera.main.transform.position;
+            var _rayDirection = GetmouseWorldPos() - Camera.main.transform.position;
+            RaycastHit _hitInfo;
+            if (Physics.Raycast(_rayOrigin, _rayDirection, out _hitInfo))
+            {
+                if (_hitInfo.transform.tag == _targetCell && _color == ColorType.White && TurnScript._turnScript._sideOfPlayer == false)
+                {
+                    _chipWhite.transform.position = _hitInfo.transform.position;
+                }
+                else if (_hitInfo.transform.tag == _targetCell && _color == ColorType.Black && TurnScript._turnScript._sideOfPlayer == true)
+                {
+                    _chipBlack.transform.position = _hitInfo.transform.position;
+                }
+
+            }
+            transform.GetComponent<Collider>().enabled = true;
         }
 
         private Vector3 GetmouseWorldPos()
