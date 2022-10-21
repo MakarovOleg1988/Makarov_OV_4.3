@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace Makarov_OV_4_3
@@ -23,12 +21,9 @@ namespace Makarov_OV_4_3
         }
 
         public void OnMouseDrag()
-        { 
-            gameObject.GetComponent<MeshRenderer>().material = _meshMaterialsChips[3];
-            char _firstNumber = gameObject.name[5];
-            char _secondNumber = gameObject.name[7];
-            var _nameCellLeft = "Cell" + _firstNumber + _secondNumber;
-            var _nameCellRight = "Cell" + _firstNumber + _secondNumber;
+        {
+            if (_color == ColorType.White && TurnScript._turnScript._sideOfPlayer == false) gameObject.GetComponent<MeshRenderer>().material = _meshMaterialsChips[3];
+            else if (_color == ColorType.Black && TurnScript._turnScript._sideOfPlayer == true) gameObject.GetComponent<MeshRenderer>().material = _meshMaterialsChips[3];
         }
     }
 }
