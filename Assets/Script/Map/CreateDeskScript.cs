@@ -44,7 +44,7 @@ namespace Makarov_OV_4_3
         {
             for (int x = 0; x <= _widht; x++)
             {
-                for (int z = 2; z <= _height; z += 1)
+                for (int z = 2; z <= _height; z += 2)
                 {
                     float _xPos = x * _sizerowX;
                     float _zPos = z * _sizerowZ;
