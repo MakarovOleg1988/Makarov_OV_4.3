@@ -17,24 +17,28 @@ namespace Makarov_OV_4_3
             _turnScript = this;
         }
 
-        public void OnMouseDown()
+        public void TurnSide()
         {
-            if (_sideOfPlayer == false) StartCoroutine(TurnBlack());
+            if (_sideOfPlayer == false)
+            {
+                StartCoroutine(TurnBlack());
+                EventManager.SendTurnSide();
+            }
             else if (_sideOfPlayer == true) StartCoroutine(TurnWhite());
         }
 
-        private IEnumerator TurnBlack()
+        public IEnumerator TurnBlack()
         {
-            _player.transform.position = new Vector3(3.4f, 8f, 4.5f);
-            _player.transform.Rotate(Vector3.up, 180);
+            yield return new WaitForSeconds(1f);
+            _player.transform.Rotate(Vector3.up, -180);
             _sideOfPlayer = true;
             yield return new WaitForSeconds(1f);
         }
 
         private IEnumerator TurnWhite()
         {
-            _player.transform.position = new Vector3(3.4f, 8f, 4.5f);
-            transform.Rotate(Vector3.up, 180);
+            yield return new WaitForSeconds(1f);
+            _player.transform.Rotate(Vector3.up, 180);
             _sideOfPlayer = false;
             yield return new WaitForSeconds(1f);
         }

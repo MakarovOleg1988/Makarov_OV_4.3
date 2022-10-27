@@ -7,7 +7,6 @@ namespace Makarov_OV_4_3
 
         [SerializeField] protected GameObject _chipWhite;
         [SerializeField] protected GameObject _chipBlack;
-        protected GameObject _selectedChip;
 
         [SerializeField] protected Material[] _meshMaterialsChips = new Material[4];
         [SerializeField] protected ColorType _color;

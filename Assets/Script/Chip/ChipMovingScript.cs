@@ -4,15 +4,10 @@ namespace Makarov_OV_4_3
 {
     public class ChipMovingScript : ChipComponent
     {
+        TurnScript _turnScript;
         private Vector3 moffset;
         [SerializeField] private float _distanceToPlayer;
         public string _targetCell = "Cell";
-
-        void onMouseDown()
-        {
-            moffset = transform.position - GetmouseWorldPos();
-            transform.GetComponent<Collider>().enabled = false;
-        }
 
         private void OnMouseUp()
         {
@@ -22,13 +17,15 @@ namespace Makarov_OV_4_3
             _distanceToPlayer = Vector3.Distance(transform.position, GetmouseWorldPos());
             if (Physics.Raycast(_rayOrigin, _rayDirection, out _hitInfo))
             {
-                if (_hitInfo.transform.tag == _targetCell && _color == ColorType.White && TurnScript._turnScript._sideOfPlayer == false && _distanceToPlayer <= GetDistanceToTarget())
+                if (_hitInfo.transform.tag == _targetCell && _color == ColorType.White && TurnScript._turnScript._sideOfPlayer == false &&  _distanceToPlayer <= GetDistanceToTarget())
                 {
                     _chipWhite.transform.position = _hitInfo.transform.position;
+                    TurnScript._turnScript.TurnSide();
                 }
-                else if (_hitInfo.transform.tag == _targetCell && _color == ColorType.Black && TurnScript._turnScript._sideOfPlayer == true && _distanceToPlayer <= GetDistanceToTarget())
+                else if (_hitInfo.transform.tag == _targetCell && _color == ColorType.Black && TurnScript._turnScript._sideOfPlayer == true &&  _distanceToPlayer <= GetDistanceToTarget())
                 {
                     _chipBlack.transform.position = _hitInfo.transform.position;
+                    TurnScript._turnScript.TurnSide();
                 }
 
             }
