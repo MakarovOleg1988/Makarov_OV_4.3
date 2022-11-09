@@ -10,12 +10,22 @@ namespace Makarov_OV_4_3
 
         string _action = "";
 
-        private void Start() => EventManager._onTurnSide += OnObservedMessage;
+        private void Start()
+        {
+            if (TurnScript._turnScript._sideOfPlayer == false)  EventManager._onTurnSideBlack += OnObservedTurnBlack;
+            else if (TurnScript._turnScript._sideOfPlayer == true) EventManager._onTurnSideBlack += OnObservedTurnWhite;
+        }
 
-        private void OnObservedMessage()
+        private void OnObservedTurnBlack()
         {
             _action = "Переход хода к черным";
-            Debug.Log("Переход хода");
+            Debug.Log("Переход хода к черным");
+        }
+
+        private void OnObservedTurnWhite()
+        {
+            _action = "Переход хода к белым";
+            Debug.Log("Переход хода к белым");
         }
 
         public void SaveReplay()

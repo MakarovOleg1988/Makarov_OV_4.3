@@ -22,9 +22,13 @@ namespace Makarov_OV_4_3
             if (_sideOfPlayer == false)
             {
                 StartCoroutine(TurnBlack());
-                EventManager.SendTurnSide();
+                EventManager.SendTurnSideBlack();
             }
-            else if (_sideOfPlayer == true) StartCoroutine(TurnWhite());
+            else if (_sideOfPlayer == true)
+            {
+                StartCoroutine(TurnWhite());
+                EventManager.SendTurnSideWhite();
+            }
         }
 
         public IEnumerator TurnBlack()
